@@ -1,0 +1,98 @@
+﻿export const SECTIONS = [
+  {
+    key: 'hero', label: 'Hero', single: true,
+    fields: [
+      { name: 'name', label: 'Name' },
+      { name: 'role_title', label: 'Role title' },
+      { name: 'tagline', label: 'Tagline', type: 'textarea' },
+      { name: 'photo_url', label: 'Photo', type: 'upload', accept: 'image/*' },
+      { name: 'resume_url', label: 'Resume (PDF)', type: 'upload', accept: 'application/pdf' },
+      { name: 'github_url', label: 'GitHub URL' },
+      { name: 'linkedin_url', label: 'LinkedIn URL' },
+      { name: 'leetcode_url', label: 'LeetCode URL' },
+      { name: 'email', label: 'Email' },
+      { name: 'open_to_work', label: 'Open to work', type: 'checkbox' },
+    ],
+  },
+  {
+    key: 'about', label: 'About', single: true,
+    fields: [
+      { name: 'bio', label: 'Bio', type: 'textarea' },
+      { name: 'location', label: 'Location' },
+      { name: 'hackathons_count', label: 'Hackathons count', type: 'number' },
+      { name: 'projects_count', label: 'Projects count', type: 'number' },
+      { name: 'certificates_count', label: 'Certificates count', type: 'number' },
+    ],
+  },
+  {
+    key: 'education', label: 'Education',
+    itemLabel: (r) => r.institution + ' (' + r.start_year + ' - ' + r.end_year + ')',
+    fields: [
+      { name: 'institution', label: 'Institution' },
+      { name: 'degree', label: 'Degree' },
+      { name: 'start_year', label: 'Start year', type: 'number' },
+      { name: 'end_year', label: 'End year', type: 'number' },
+      { name: 'score', label: 'Score (CGPA or percentage)' },
+      { name: 'coursework', label: 'Key subjects (comma separated)' },
+      { name: 'sort_order', label: 'Sort order', type: 'number' },
+    ],
+  },
+  {
+    key: 'skills', label: 'Skills',
+    itemLabel: (r) => r.name + '  -  ' + r.category,
+    fields: [
+      { name: 'name', label: 'Skill name' },
+      { name: 'category', label: 'Category (Languages, Frontend, Backend, Database, Core CS, Tools)' },
+      { name: 'sort_order', label: 'Sort order', type: 'number' },
+    ],
+  },
+  {
+    key: 'projects', label: 'Projects',
+    itemLabel: (r) => r.title,
+    fields: [
+      { name: 'title', label: 'Title' },
+      { name: 'description', label: 'Description', type: 'textarea' },
+      { name: 'tech_stack', label: 'Tech stack (comma separated)' },
+      { name: 'github_url', label: 'GitHub URL' },
+      { name: 'live_url', label: 'Live demo URL' },
+      { name: 'image_url', label: 'Screenshot', type: 'upload', accept: 'image/*' },
+      { name: 'featured', label: 'Featured', type: 'checkbox' },
+      { name: 'sort_order', label: 'Sort order', type: 'number' },
+    ],
+  },
+  {
+    key: 'certificates', label: 'Certificates',
+    itemLabel: (r) => r.title,
+    fields: [
+      { name: 'title', label: 'Title' },
+      { name: 'issuer', label: 'Issuer' },
+      { name: 'issue_date', label: 'Issue date', type: 'date' },
+      { name: 'credential_url', label: 'Certificate file or link', type: 'upload', accept: 'image/*,application/pdf' },
+      { name: 'sort_order', label: 'Sort order', type: 'number' },
+    ],
+  },
+  {
+    key: 'hackathons', label: 'Hackathons',
+    itemLabel: (r) => r.name,
+    fields: [
+      { name: 'name', label: 'Name' },
+      { name: 'event_date', label: 'Event date', type: 'date' },
+      { name: 'project_name', label: 'Project name' },
+      { name: 'result', label: 'Result' },
+      { name: 'description', label: 'Description', type: 'textarea' },
+      { name: 'link', label: 'Certificate file or link', type: 'upload', accept: 'image/*,application/pdf' },
+      { name: 'sort_order', label: 'Sort order', type: 'number' },
+    ],
+  },
+  {
+    key: 'achievements', label: 'Achievements',
+    itemLabel: (r) => r.title,
+    fields: [
+      { name: 'title', label: 'Title' },
+      { name: 'description', label: 'Description', type: 'textarea' },
+      { name: 'achieved_date', label: 'Date', type: 'date' },
+      { name: 'category', label: 'Category (Award, Leadership, Community, Hackathon)' },
+      { name: 'sort_order', label: 'Sort order', type: 'number' },
+    ],
+  },
+]
