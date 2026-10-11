@@ -5,26 +5,26 @@ export default function Education({ items }) {
   return (
     <section id="education" className="section">
       <h2 className="title">Education</h2>
-      <div className="stack">
+      <div className="timeline">
         {items.map((e) => (
-          <article key={e.id} className="card">
-            <div className="card-head">
-              <h3>{e.institution}</h3>
-              <span className="years">{e.start_year} - {e.end_year}</span>
-            </div>
-            <p className="degree">{e.degree}</p>
-            {e.score && <p className="score">{e.score}</p>}
-            {e.coursework && (
+          <div key={e.id} className="timeline-item">
+            <span className="tl-dot" />
+            <div className="card">
+              <div className="card-head">
+                <h3>{e.institution}</h3>
+                <span className="badge small">{e.start_year} - {e.end_year}</span>
+              </div>
+              <p className="degree">{e.degree}</p>
+              {e.score && <p className="meta score">{e.score}</p>}
               <div className="chips">
-                {splitList(e.coursework).map((s) => (
-                  <span key={s} className="chip">{s}</span>
+                {splitList(e.coursework).map((c) => (
+                  <span key={c} className="chip">{c}</span>
                 ))}
               </div>
-            )}
-          </article>
+            </div>
+          </div>
         ))}
       </div>
     </section>
   )
 }
-

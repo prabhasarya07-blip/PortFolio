@@ -10,11 +10,13 @@ import Certifications from './components/Certifications.jsx'
 import Hackathons from './components/Hackathons.jsx'
 import Achievements from './components/Achievements.jsx'
 import Contact from './components/Contact.jsx'
+import { useSiteEffects } from './effects.js'
 import Admin from './admin/Admin.jsx'
 
 function Site() {
   const [data, setData] = useState(null)
   const [error, setError] = useState('')
+  useSiteEffects(data)
 
   useEffect(() => {
     Promise.all([
@@ -68,3 +70,4 @@ function Site() {
 export default function App() {
   return window.location.pathname.startsWith('/admin') ? <Admin /> : <Site />
 }
+
